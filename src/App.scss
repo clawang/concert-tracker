@@ -1,0 +1,225 @@
+@font-face {
+  font-family: Neue Haas Grotesk;
+  src: url(./media/NeueHaasGrotesk-Regular.otf);
+}
+
+$green: #d3fc50;
+$purple: #e4792b;
+$grey: #dfb771;
+
+body {
+  background: black;
+}
+
+h2, h3, h4, p {
+  font-family: Neue Haas Grotesk, sans-serif;
+}
+
+.form-wrapper {
+  width: 100%;
+  margin: 20px 0 50px;
+  
+  h2 {
+    color: $green;
+  }
+}
+
+form {
+  color: $green;
+  width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: left;
+  margin: 5px 0;
+}
+
+input {
+  background: black;
+  border: 1px solid $green;
+  color: $green;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background: $green;
+  color: black;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+select {
+  background: black;
+  color: $green;
+  border: 1px solid $green;
+  width: 100%;
+  margin-bottom: 20px;
+  max-width: 200px;
+}
+
+.App {
+  text-align: center;
+  padding: 50px;
+}
+
+label {
+  display: block;
+}
+
+.nav-wrapper {
+  p {
+    display: inline-block;
+    color: $green;
+    cursor: pointer;
+    padding: 10px;
+    text-transform: uppercase;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.concerts-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.concert-wrapper {
+  width: 32%;
+  padding: 10px;
+  text-align: left;
+  box-sizing: border-box;
+
+  .concert-date-header {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  &:nth-of-type(9n+1), &:nth-of-type(9n+6), &:nth-of-type(9n+8) {
+    background: $green;
+
+    h3 {
+      color: $green;
+    }
+
+    .concert-date-header {
+      background: $grey;
+      
+    }
+
+    span {
+      background: $purple;
+      color: black;
+    }
+  }
+
+  &:nth-of-type(9n+2), &:nth-of-type(9n+4), &:nth-of-type(9n) {
+    background: $purple;
+
+    h3 {
+      color: $grey;
+    }
+
+    .concert-date-header {
+      background: $green;
+      
+    }
+
+    span {
+      background: $grey;
+      color: black;
+    }
+  }
+
+  &:nth-of-type(9n+3), &:nth-of-type(9n+5), &:nth-of-type(9n+7) {
+    background: $grey;
+
+    h3 {
+      color: $grey;
+    }
+
+    .concert-date-header {
+      background: $green;
+    }
+
+    span {
+      background: $purple;
+      color: black;
+    }
+  }
+
+  h3, h4, p {
+    margin: 0;
+  }
+
+  .concert-details-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  p.rating {
+    font-size: 24px;
+  }
+}
+
+.artists-wrapper {
+  margin: 20px 0;
+
+  p {
+    color: $green;
+    margin: 5px 0;
+  }
+}
+
+.venues-wrapper {
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.venue-wrapper {
+  display: flex;
+  text-align: left;
+
+  p {
+    color: $green;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  span.venue-name {
+    font-weight: 800;
+    opacity: 1;
+  }
+
+  span.venue-info {
+    opacity: 0.8;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .concert-wrapper {
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  form {
+    width: 100%;
+  }
+
+  .concert-wrapper {
+    width: 100%;
+  }
+}
