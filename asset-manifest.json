@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/concert-tracker/static/css/main.0712eb1f.css",
+    "main.js": "/concert-tracker/static/js/main.58317e75.js",
+    "static/js/787.ec7c3d2f.chunk.js": "/concert-tracker/static/js/787.ec7c3d2f.chunk.js",
+    "static/media/NeueHaasGrotesk-Regular.otf": "/concert-tracker/static/media/NeueHaasGrotesk-Regular.defc68dac7c1b73bb7b1.otf",
+    "index.html": "/concert-tracker/index.html",
+    "main.0712eb1f.css.map": "/concert-tracker/static/css/main.0712eb1f.css.map",
+    "main.58317e75.js.map": "/concert-tracker/static/js/main.58317e75.js.map",
+    "787.ec7c3d2f.chunk.js.map": "/concert-tracker/static/js/787.ec7c3d2f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0712eb1f.css",
+    "static/js/main.58317e75.js"
+  ]
+}
