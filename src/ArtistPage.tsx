@@ -18,7 +18,7 @@ function ArtistPage({ state, setState }: ArtistPageProps) {
         } else if (sort === "Most Shows") {
             compareFn = (a: Artist, b: Artist) => b.numShows - a.numShows;
         } else if (sort === "Most Recent") {
-            compareFn = (a: Artist, b: Artist) => b.numShows - a.numShows;
+            compareFn = (a: Artist, b: Artist) => b.latestDate.getTime() - a.latestDate.getTime();
         }
         setState({artists: [...state.artists].sort(compareFn)});
     }, [sort]);
@@ -29,11 +29,11 @@ function ArtistPage({ state, setState }: ArtistPageProps) {
                 value={sort}
                 onChange={e => setSort(e.target.value as SortOptions)}
             >
+                <option value="Most Recent">Most Recent</option>
                 <option value="Name A-Z">Name A-Z</option>
                 <option value="Most Shows">Most Shows</option>
-                <option value="Most Recent">Most Recent</option>
             </select>
-            {state.artists.map(artist => <p>{`${artist.name} (${artist.numShows})`}</p>)}
+            {state.artists.map((artist, index) => <p key={index}>{`${artist.name} (${artist.numShows})`}</p>)}
         </div>
     );
 }

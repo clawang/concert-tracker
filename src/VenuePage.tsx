@@ -20,7 +20,7 @@ function VenuePage({ state, setState }: VenuePageProps) {
         } else if (sort === "Most Shows") {
             compareFn = (a: Venue, b: Venue) => b.numShows - a.numShows;
         } else if (sort === "Most Recent") {
-            compareFn = (a: Venue, b: Venue) => b.numShows - a.numShows;
+            compareFn = (a: Venue, b: Venue) => b.latestDate.getTime() - a.latestDate.getTime();
         }
         setState({venues: [...state.venues].sort(compareFn)});
     }, [sort]);
@@ -31,14 +31,14 @@ function VenuePage({ state, setState }: VenuePageProps) {
                 value={sort}
                 onChange={e => setSort(e.target.value as SortOptions)}
             >
+                <option value="Most Recent">Most Recent</option>
                 <option value="Name A-Z">Name A-Z</option>
                 <option value="City A-Z">City A-Z</option>
                 <option value="Most Shows">Most Shows</option>
-                <option value="Most Recent">Most Recent</option>
             </select>
-            {state.venues.map(venue => {
+            {state.venues.map((venue, index) => {
                 return (
-                    <div className="venue-wrapper">
+                    <div className="venue-wrapper" key={index}>
                         <p>
                             <span className="venue-name">{venue.name}</span>
                             <span className="venue-info">{venue.city} ({venue.numShows})</span>

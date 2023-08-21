@@ -11,8 +11,6 @@ type InputDataType = {
 
 interface InputProps {
     handleInputSubmit: (date: Date, name: string, venueName: string, venueCity: string, rating: number) => void;
-    // inputData: InputDataType;
-    // setInputData: (value: Partial<InputDataType> | ((prevVar: InputDataType) => InputDataType)) => void;
 };
 
 function Input({ handleInputSubmit }: InputProps) {
@@ -67,7 +65,6 @@ function Input({ handleInputSubmit }: InputProps) {
                 <input type="number" name="rating" min={0} max={5} step={0.1} value={inputData.rating} onChange={onInputChange} />
             </label>
             <input type="submit" />
-            {/* {Object.entries(inputData).map(entry => <p>{entry[0] + ": " + entry[1]}</p>)} */}
         </form>
     );
 }
